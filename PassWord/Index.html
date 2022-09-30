@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./Output.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:not(:checked) {
+            height: 12px;
+            width: 12px;
+            accent-color: rgb(143, 238, 241);
+        }
+
+        input:checked {
+            height: 15px;
+            width: 15px;
+            accent-color: rgb(16, 180, 130);
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgb(9, 60, 42);
+        }
+
+        #hist {
+            height: 60%;
+        }
+
+        @media (max-width:400px) {
+            #hist {
+                height: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container flex flex-col items-center sm:w-2/5 w-92 mx-auto my-10">
+        <div class="sm:w-2/5 w-92 bg-bg-0 sm:p-5 absolute -top-full p-2 flex flex-col justify-between" id="hist">
+            <table class="relative overflow-auto border-collapse font-pop w-full">
+                <thead>
+                    <th class="p-2 text-left text-white font-pop font-semibold bg-green-900">Password</th>
+                    <th class="p-2 text-left text-white font-pop font-semibold bg-green-900">Date</th>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+            <button class="py-1 px-3 bg-green-400 font-pop text-sm mt-4 self-end back">Back</button>
+        </div>
+        <div class="bg-bg-0 p-4 rounded-4 w-full justify-between flex flex-row items-center">
+            <p class="password font-pop font-semibold sm:text-xl text-left self-start text-white text-lg">------</p>
+            <i class="fa text-green-400 text-lg self-start copy cursor-pointer">&#xf0c5;</i>
+        </div>
+        <div class="flex flex-col items-center w-full bg-bg-0 p-4 mt-5 rounded-4">
+            <h1 class="text-xl text-white text-center uppercase my-2 font-semibold">Password</h1>
+            <div class="items-start w-full flex flex-col mt-5" id="checks">
+                <div class="flex flex-row items-center">
+                    <input type="checkbox" id="alpha">
+                    <label class="font-pop sm:text-base ml-5 text-white text-xs" for="alpha">Include Alphabet to
+                        password</label>
+                </div>
+                <div class="flex flex-row items-center my-5">
+                    <input type="checkbox" id="num">
+                    <label class="font-pop sm:text-base ml-5 text-white text-xs" for="num">Include Numbers to
+                        password</label>
+                </div>
+                <div class="flex flex-row items-center">
+                    <input type="checkbox" id="sym">
+                    <label class="font-pop sm:text-base ml-5 text-white text-xs" for="sym">Include Symbols to
+                        password</label>
+                </div>
+            </div>
+            <div class="flex flex-row items-center bg-op-0 p-3 justify-between my-5 w-full">
+                <p class="text-sm text-green-300 self-start text-left uppercase">strength</p>
+                <div class="strength text-white uppercase text-base font-pop sm:font-semibold">-----</div>
+            </div>
+            <button type="button" class="bg-green-400 py-2 px-3 block w-full font-pop text-sm"
+                id="btn">Generate</button>
+            <button class="py-1 px-3 bg-green-400 font-pop text-sm mt-4 self-end" id="history">history</button>
+        </div>
+    </div>
+    <script src="Index.js"></script>
+</body>
+
+</html>
